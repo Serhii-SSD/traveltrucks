@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import Header from "@/components/Header/Header";
 import styles from "./page.module.css"
 
@@ -19,11 +19,11 @@ export default function HomePage() {
           { }
           <div className={styles.imageWrapper}>
             <Image
-              src="/public/hero.webp"
+              src="/hero.webp"
               alt="Travel truck at sundown"
               fill
               priority
-              quality={85}
+              quality={75}
               className={styles.heroImage}
             />
           </div>
