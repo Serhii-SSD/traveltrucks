@@ -1,25 +1,46 @@
-'use client'
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+'use client';
+
+import { usePathname, useRouter } from 'next/navigation';
 import styles from './Header.module.css';
 
 export default function Header() {
-    const pathname = usePathname();
-    return (
-        <header className={styles.header}>
-            <div className={styles.container}>
-                <Link href="/" className={styles.logo}>
-                    TravelTrucks
-                </Link>
-                <nav className={styles.nav}>
-                    <Link href="/" className={pathname === '/' ? styles.active : styles.Link }>
-                    Home
-                    </Link>
-                <Link href="/catalog" className={pathname.startsWith('/catalog') ? styles.active : styles.Link}>
-                Catalog
-                </Link>
-                </nav>
-            </div>
-        </header>
-    )
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleNavigate = (path: string) => {
+    router.push(path);
+  };
+
+  return (
+    <header className={styles.header}>
+      <div className={styles.container}>
+        {}
+        <div 
+          className={styles.logo} 
+          onClick={() => handleNavigate('/')} 
+          role="button" 
+          tabIndex={0}>
+          <svg className={styles.logoIcon}>
+            <use href="/sprite.svg#TravelTrucks" />
+          </svg>
+        </div>
+
+        {}
+        <nav className={styles.nav}>
+          <button
+            type="button"
+            className={pathname === '/' ? styles.active : styles.link}
+            onClick={() => handleNavigate('/')}>
+            Home
+          </button>
+          <button
+            type="button"
+            className={pathname.startsWith('/catalog') ? styles.active : styles.link}
+            onClick={() => handleNavigate('/catalog')}>
+            Catalog
+          </button>
+        </nav>
+      </div>
+    </header>
+  );
 }

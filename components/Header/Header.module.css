@@ -1,0 +1,46 @@
+.header {
+  width: 100%;
+  background-color: var(--inputs, #f7f7f7);
+  border-bottom: 1px solid var(--badges, #f2f4f7);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 64px;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #101828;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.link {
+  font-size: 16px;
+  font-weight: 500;
+  color: #101828;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #829b91;
+}
+
+.active {
+  font-size: 16px;
+  font-weight: 600;
+  color: #829b91;
+  text-decoration: none;
+}
