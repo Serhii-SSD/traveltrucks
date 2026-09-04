@@ -60,7 +60,7 @@ export default function CamperDetails({ camper }: CamperDetailsProps) {
         </li>
         <li className={css.specItem}>
           <span>Consumption</span>
-          <span>{сфьзукюсщтігьзешщт}</span>
+          <span>{camper.consumption}</span>
         </li>
       </ul>
     </div>
