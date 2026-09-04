@@ -1,32 +1,40 @@
 .header {
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #e4e7ec;
+  padding: 24px 0;
   width: 100%;
-  background-color: var(--inputs, #f7f7f7);
-  border-bottom: 1px solid var(--badges, #f2f4f7);
 }
 
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 24px 64px;
-  height: 72px;
+  padding: 0 64px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
-  font-size: 20px;
-  font-weight: 700;
-  color: #101828;
+  display: flex;
+  align-items: center;
   text-decoration: none;
+  color: #101828;
+}
+
+.logoIcon {
+  width: 136px;
+  height: 16px;
+  display: block;
+  color: #101828;
 }
 
 .nav {
   display: flex;
+  align-items: center;
   gap: 32px;
 }
 
-.link {
+.navLink {
   font-size: 16px;
   font-weight: 500;
   color: #101828;
@@ -34,13 +42,6 @@
   transition: color 0.2s ease;
 }
 
-.link:hover {
-  color: #829b91;
-}
-
-.active {
-  font-size: 16px;
-  font-weight: 600;
-  color: #829b91;
-  text-decoration: none;
+.navLink:hover {
+  color: #e44848;
 }

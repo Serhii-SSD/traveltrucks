@@ -1,0 +1,188 @@
+.cardItem {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  border: 1px solid var(--border, #e4e5e7);
+  border-radius: 20px;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+/* Обкладинка */
+.imageWrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: 292px;
+  height: 320px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cardImage {
+  object-fit: cover;
+}
+
+/* Права частина з контентом */
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Шапка картки (Назва + Ціна + Серце) */
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--main-text, #101828);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 340px;
+}
+
+.priceFavoriteWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--main-text, #101828);
+}
+
+.favoriteBtn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heartIcon {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--main-text, #101828);
+  transition:
+    stroke 0.2s ease,
+    fill 0.2s ease;
+}
+
+.favoriteBtn.active .heartIcon {
+  fill: var(--button, #e44848);
+  stroke: var(--button, #e44848);
+}
+
+/* Рейтинг та локація */
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.ratingWrapper,
+.locationWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.starIcon {
+  width: 16px;
+  height: 16px;
+  fill: #ffc531;
+}
+
+.ratingText {
+  text-decoration: underline;
+  color: var(--main-text, #101828);
+}
+
+.mapIcon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--main-text, #101828);
+}
+
+/* Опис */
+.description {
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--gray, #475467);
+  margin: 0 0 24px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Бейджі (Engine, Transmission, Form) */
+.featuresList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0 0 24px 0;
+  list-style: none;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 100px;
+  background-color: var(--badges-bg, #f2f4f7);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--main-text, #101828);
+}
+
+.featureIcon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--main-text, #101828);
+}
+
+/* Кнопка Show more */
+.showMoreBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 166px;
+  padding: 16px 0;
+  border-radius: 200px;
+  background-color: var(--button, #e44848);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-decoration: none;
+  margin-top: auto;
+  transition: background-color 0.2s ease;
+}
+
+.showMoreBtn:hover {
+  background-color: var(--button-hover, #d84343);
+}

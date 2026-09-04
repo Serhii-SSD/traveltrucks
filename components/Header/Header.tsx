@@ -1,44 +1,23 @@
-'use client';
-
-import { usePathname, useRouter } from 'next/navigation';
-import styles from './Header.module.css';
+import Link from 'next/link';
+import css from './Header.module.css';
 
 export default function Header() {
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const handleNavigate = (path: string) => {
-    router.push(path);
-  };
-
   return (
-    <header className={styles.header}>
-      <div className={styles.container}>
-        {}
-        <div 
-          className={styles.logo} 
-          onClick={() => handleNavigate('/')} 
-          role="button" 
-          tabIndex={0}>
-          <svg className={styles.logoIcon}>
+    <header className={css.header}>
+      <div className={css.container}>
+        <Link href="/" className={css.logo}>
+          <svg className={css.logoIcon} width="136" height="16">
             <use href="/sprite.svg#TravelTrucks" />
           </svg>
-        </div>
+        </Link>
 
-        {}
-        <nav className={styles.nav}>
-          <button
-            type="button"
-            className={pathname === '/' ? styles.active : styles.link}
-            onClick={() => handleNavigate('/')}>
+        <nav className={css.nav}>
+          <Link href="/" className={css.navLink}>
             Home
-          </button>
-          <button
-            type="button"
-            className={pathname.startsWith('/catalog') ? styles.active : styles.link}
-            onClick={() => handleNavigate('/catalog')}>
+          </Link>
+          <Link href="/catalog" className={css.navLink}>
             Catalog
-          </button>
+          </Link>
         </nav>
       </div>
     </header>
