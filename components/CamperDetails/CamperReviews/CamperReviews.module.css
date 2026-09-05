@@ -1,24 +1,22 @@
-.reviewsContainer {
-  display: flex;
-  flex-direction: column;
-}
-
 .reviewsList {
   display: flex;
   flex-direction: column;
-  gap: 44px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  gap: 24px;
+  width: 623px;
 }
 
 .reviewCard {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  padding: 16px;
+  background-color: #f7f7f7;
+  border-radius: 16px;
+  box-sizing: border-box;
 }
 
-.headerRow {
+.reviewerHeader {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -28,8 +26,8 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #f2f4f7;
-  color: #e44848;
+  background-color: #ffffff;
+  color: #829b91;
   font-size: 24px;
   font-weight: 600;
   display: flex;
@@ -38,37 +36,38 @@
   flex-shrink: 0;
 }
 
-.meta {
+.reviewerInfo {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.authorName {
-  font-size: 18px;
-  font-weight: 600;
+.reviewerName {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
   color: #101828;
   margin: 0;
 }
 
-.starsContainer {
+.starsRow {
   display: flex;
   gap: 4px;
+  font-size: 16px;
 }
 
 .starFilled {
   color: #ffc531;
-  font-size: 16px;
 }
 
 .starEmpty {
-  color: #f2f4f7;
-  font-size: 16px;
+  color: #dadde1;
 }
 
 .comment {
   font-size: 16px;
-  line-height: 1.5;
+  font-weight: 400;
+  line-height: 24px;
   color: #475467;
   margin: 0;
 }
@@ -76,5 +75,4 @@
 .noReviews {
   font-size: 16px;
   color: #475467;
-  padding: 20px 0;
 }
