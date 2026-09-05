@@ -1,5 +1,6 @@
 .asideFilters {
   width: 360px;
+  height: 840px;
   flex-shrink: 0;
   background-color: #f7f7f7;
   padding: 40px 32px;
@@ -17,9 +18,9 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  margin-bottom: 48px;
 }
 
-/* Location */
 .labelLocation {
   display: flex;
   flex-direction: column;
@@ -58,11 +59,6 @@
   transition: border-color 0.2s ease;
 }
 
-.inputLocation:focus {
-  border-color: #e44848;
-}
-
-/* Filter Groups */
 .filterContainer {
   display: flex;
   flex-direction: column;
@@ -89,7 +85,6 @@
   margin: 0;
 }
 
-/* Custom Radio Buttons */
 .labelRadio {
   display: flex;
   align-items: center;
@@ -122,18 +117,17 @@
   border-radius: 50%;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
-  background-color: #e44848;
+  background-color: #475467;
 }
 
 .labelRadio input[type="radio"]:checked {
-  border-color: #e44848;
+  border-color: #475467;
 }
 
 .labelRadio input[type="radio"]:checked::before {
   transform: scale(1);
 }
 
-/* Action Buttons */
 .formButton {
   display: flex;
   flex-direction: column;
@@ -176,6 +170,7 @@
 
 .clearBtn:hover {
   background-color: #f2f4f7;
+  border: solid 1px #475467;
 }
 
 .vectorIcon {

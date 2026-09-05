@@ -53,12 +53,12 @@ export default function SearchFilter({
     <aside className={css.asideFilters}>
       <form className={css.formFilter} onSubmit={handleFilterSubmit}>
         <div className={css.formContainer}>
-          {/* Location Field */}
+          {}
           <label className={css.labelLocation}>
             <span>Location</span>
             <div className={`${css.containerInput} ${location ? css.filled : ''}`}>
               <svg className={css.mapIcon}>
-                <use href="/sprite.svg#Map" />
+                <use href="/IconsSprite.svg#Map" />
               </svg>
               <input
                 value={location}
@@ -74,7 +74,7 @@ export default function SearchFilter({
           <div className={css.filterContainer}>
             <p className={css.titleFilter}>Filters</p>
 
-            {/* Camper Form */}
+            {}
             <div className={css.CamperField}>
               <p className={css.radioTitle}>Camper form</p>
               {filtersData.forms?.map(formOption => (
@@ -97,7 +97,7 @@ export default function SearchFilter({
               ))}
             </div>
 
-            {/* Engine */}
+            {}
             <div className={css.CamperField}>
               <p className={css.radioTitle}>Engine</p>
               {filtersData.engines?.map(engineOption => (
@@ -120,7 +120,7 @@ export default function SearchFilter({
               ))}
             </div>
 
-            {/* Transmission */}
+            {}
             <div className={css.CamperField}>
               <p className={css.radioTitle}>Transmission</p>
               {filtersData.transmissions?.map(transmissionOption => (
@@ -145,14 +145,14 @@ export default function SearchFilter({
           </div>
         </div>
 
-        {/* Action Buttons */}
+        {}
         <div className={css.formButton}>
           <button type="submit" className={css.searchBtn}>
             Search
           </button>
           <button type="button" className={css.clearBtn} onClick={handleClear}>
             <svg className={css.vectorIcon}>
-              <use href="/sprite.svg#Vector" />
+              <use href="/logo-sprite.svg#Vector" />
             </svg>
             Clear filters
           </button>
