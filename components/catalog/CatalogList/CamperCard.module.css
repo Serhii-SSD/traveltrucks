@@ -10,7 +10,6 @@
   list-style: none;
 }
 
-/* --- Image Wrapper --- */
 .imageWrapper {
   position: relative;
   width: 219px;
@@ -25,14 +24,12 @@
   object-fit: cover;
 }
 
-/* --- Content Wrapper --- */
 .contentWrapper {
   display: flex;
   flex-direction: column;
   width: 524px;
 }
 
-/* Header: Title + Price */
 .headerRow {
   display: flex;
   justify-content: space-between;
@@ -59,7 +56,6 @@
   color: #101828;
 }
 
-/* Meta: Rating + Location */
 .metaRow {
   display: flex;
   align-items: center;
@@ -84,7 +80,7 @@
   font-weight: 400;
   line-height: 24px;
   color: #101828;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .locationWrapper {
@@ -95,6 +91,7 @@
   font-weight: 400;
   line-height: 24px;
   color: #101828;
+  text-decoration: none;
 }
 
 .mapIcon {
@@ -104,7 +101,6 @@
   stroke: #101828;
 }
 
-/* Description */
 .description {
   font-size: 16px;
   font-weight: 400;
@@ -116,7 +112,6 @@
   text-overflow: ellipsis;
 }
 
-/* Features / Badges */
 .featuresList {
   display: flex;
   flex-wrap: wrap;

@@ -16,7 +16,6 @@ export default function CamperCard({ camper }: CamperCardProps) {
     price,
     rating,
     totalReviews,
-    location,
     description,
     coverImage,
     transmission,
@@ -24,6 +23,13 @@ export default function CamperCard({ camper }: CamperCardProps) {
     form,
   } = camper;
 
+  const formatLocation = (loc: string) => {
+  if (!loc) return '';
+  const parts = loc.split(',').map(item => item.trim());
+  return parts.length === 2 ? `${parts[1]}, ${parts[0]}` : loc;
+  };
+  const formattedLocation = formatLocation(camper.location);
+  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(formattedLocation)}`;
   const formatBadgeLabel = (value: string) =>
     value
       .split('_')
@@ -32,7 +38,7 @@ export default function CamperCard({ camper }: CamperCardProps) {
 
   return (
     <li className={css.cardItem}>
-      {/* Головне фото */}
+      {}
       <div className={css.imageWrapper}>
         <Image
           src={coverImage || '/placeholder.jpg'}
@@ -43,15 +49,15 @@ export default function CamperCard({ camper }: CamperCardProps) {
         />
       </div>
 
-      {/* Інформаційна частина */}
+      {}
       <div className={css.contentWrapper}>
-        {/* Заголовок та ціна */}
+        {}
         <div className={css.headerRow}>
           <h2 className={css.title}>{name}</h2>
-          <span className={css.price}>€{price.toFixed(2)}</span>
+          <span className={css.price}>€{price}</span>
         </div>
 
-        {/* Рейтинг та локація */}
+        {}
         <div className={css.metaRow}>
           <div className={css.ratingWrapper}>
             <svg className={css.starIcon} width="16" height="16" aria-hidden="true">
@@ -62,18 +68,25 @@ export default function CamperCard({ camper }: CamperCardProps) {
             </span>
           </div>
 
-          <div className={css.locationWrapper}>
+          <a
+            href={mapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={css.locationWrapper}
+          >
             <svg className={css.mapIcon} width="16" height="16" aria-hidden="true">
               <use href="/IconsSprite.svg#Map" />
             </svg>
-            <span>{location}</span>
-          </div>
+           <span className={css.locationText}>
+      {formatLocation(camper.location)}
+    </span>
+          </a>
         </div>
 
-        {/* Короткий опис */}
+        {}
         <p className={css.description}>{description}</p>
 
-        {/* Основні характеристики: Engine, Transmission, Form */}
+        {}
         <ul className={css.featuresList}>
           {engine && (
             <li className={css.featureItem}>
