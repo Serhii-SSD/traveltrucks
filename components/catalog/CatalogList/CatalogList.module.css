@@ -37,7 +37,7 @@
 }
 
 .loadMoreBtn:hover:not(:disabled) {
-  border-color: var(--button, #e44848);
+  border-color: var(--button, #6d7b75);
 }
 
 .loadMoreBtn:disabled {

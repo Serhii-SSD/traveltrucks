@@ -54,8 +54,8 @@ export default function CamperCard({ camper }: CamperCardProps) {
         {/* Рейтинг та локація */}
         <div className={css.metaRow}>
           <div className={css.ratingWrapper}>
-            <svg className={css.starIcon}>
-              <use href="/sprite.svg#Rating" />
+            <svg className={css.starIcon} width="16" height="16" aria-hidden="true">
+              <use href="/IconsSprite.svg#gold-rating" />
             </svg>
             <span className={css.ratingText}>
               {rating} ({totalReviews} Reviews)
@@ -63,8 +63,8 @@ export default function CamperCard({ camper }: CamperCardProps) {
           </div>
 
           <div className={css.locationWrapper}>
-            <svg className={css.mapIcon}>
-              <use href="/sprite.svg#Map" />
+            <svg className={css.mapIcon} width="16" height="16" aria-hidden="true">
+              <use href="/IconsSprite.svg#Map" />
             </svg>
             <span>{location}</span>
           </div>
@@ -77,43 +77,39 @@ export default function CamperCard({ camper }: CamperCardProps) {
         <ul className={css.featuresList}>
           {engine && (
             <li className={css.featureItem}>
-              <svg className={css.featureIcon}>
-                <use href="/sprite.svg#Fuel-pump" />
+              <svg className={css.featureIcon} width="20" height="20" aria-hidden="true">
+                <use href="/IconsSprite.svg#diesel" />
               </svg>
               <span>{formatBadgeLabel(engine)}</span>
             </li>
           )}
           {transmission && (
             <li className={css.featureItem}>
-              <svg className={css.featureIcon}>
-                <use href="/sprite.svg#diagram" />
+              <svg className={css.featureIcon} width="20" height="20" aria-hidden="true">
+                <use href="/IconsSprite.svg#gearbox" />
               </svg>
               <span>{formatBadgeLabel(transmission)}</span>
             </li>
           )}
           {form && (
             <li className={css.featureItem}>
-              <svg className={css.featureIcon}>
-                <use href="/sprite.svg#van" />
+              <svg className={css.featureIcon} width="20" height="20" aria-hidden="true">
+                <use href="/IconsSprite.svg#car-type" />
               </svg>
               <span>{formatBadgeLabel(form)}</span>
             </li>
           )}
         </ul>
 
-        {/* Кнопка переходу на деталі */}
+        {}
         <Link
-  href={`/catalog/${camper.id}`}
-  target="_blank"
-  rel="noopener noreferrer"
-  className={css.showMoreBtn}
->
-  Show more
-</Link>
-        {/* <Link href={`/catalog/${id}`} className={css.showMoreBtn}>
+          href={`/catalog/${id}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={css.showMoreBtn}
+        >
           Show more
-        </Link> */}
-
+        </Link>
       </div>
     </li>
   );

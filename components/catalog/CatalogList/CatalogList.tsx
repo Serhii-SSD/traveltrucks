@@ -3,12 +3,15 @@
 import CamperCard from './CamperCard';
 import css from './CatalogList.module.css';
 import { Campers } from '@/types/camper';
+import LoaderModal from '@/components/catalog/LoaderModal/LoaderModal';
+import EmptyState from '@/components/catalog/CatalogList/EmptyState';
 
 interface CatalogListProps {
   campers: Campers[];
   hasMore: boolean;
   onLoadMore: () => void;
   isLoading: boolean;
+  onClearFilters: () => void;
 }
 
 export default function CatalogList({
@@ -16,35 +19,39 @@ export default function CatalogList({
   hasMore,
   onLoadMore,
   isLoading,
+  onClearFilters,
 }: CatalogListProps) {
-  if (!isLoading && campers.length === 0) {
-    return (
-      <div className={css.emptyState}>
-        <p>No campers found matching your criteria.</p>
-      </div>
-    );
-  }
-
   return (
     <section className={css.listSection}>
-      <ul className={css.camperGrid}>
-        {campers.map(camper => (
-          <CamperCard key={camper.id} camper={camper} />
-        ))}
-      </ul>
+      {}
+      {isLoading && <LoaderModal />}
 
       {}
-      {hasMore && (
-        <div className={css.loadMoreContainer}>
-          <button
-            type="button"
-            className={css.loadMoreBtn}
-            onClick={onLoadMore}
-            disabled={isLoading}
-          >
-            {isLoading ? 'Loading...' : 'Load more'}
-          </button>
-        </div>
+      {!isLoading && campers.length === 0 && (
+        <EmptyState onClearFilters={onClearFilters} />
+      )}
+
+      {}
+      {campers.length > 0 && (
+        <>
+          <ul className={css.camperGrid}>
+            {campers.map(camper => (
+              <CamperCard key={camper.id} camper={camper} />
+            ))}
+          </ul>
+
+          {hasMore && (
+            <div className={css.loadMoreContainer}>
+              <button
+                type="button"
+                className={css.loadMoreBtn}
+                onClick={onLoadMore}
+              >
+                Load more
+              </button>
+            </div>
+          )}
+        </>
       )}
     </section>
   );
