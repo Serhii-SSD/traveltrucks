@@ -1,0 +1,62 @@
+.detailsPage {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 64px 80px;
+  box-sizing: border-box;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.topSection {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.galleryColumn {
+  width: 638px;
+  flex-shrink: 0;
+}
+
+.infoColumn {
+  flex: 1;
+}
+
+.bottomSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #101828;
+  margin: 0;
+}
+
+.bottomSectionContent {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.reviewsColumn {
+  width: 623px;
+  height: 384px;
+}
+
+.bookingColumn {
+  border: 1px solid #dadde1;
+  border-radius: 16px;
+  padding: 44px;
+  width: 641px;
+}
