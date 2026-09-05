@@ -6,10 +6,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import type { Swiper as SwiperClass } from 'swiper';
 
-// Імпорт базових стилів Swiper
 import 'swiper/css';
 import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
 import { Gallery } from '@/types/camper';
@@ -26,13 +24,12 @@ export default function CamperGallery({ gallery }: CamperGalleryProps) {
 
   return (
     <div className={css.galleryWrapper}>
-      {/* Головний слайдер з великим фото */}
+      {}
       <Swiper
         loop={true}
         spaceBetween={10}
-        navigation={true}
         thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
-        modules={[FreeMode, Navigation, Thumbs]}
+        modules={[FreeMode, Thumbs]}
         className={css.mainSwiper}
       >
         {gallery.map((item, index) => (
@@ -51,7 +48,7 @@ export default function CamperGallery({ gallery }: CamperGalleryProps) {
         ))}
       </Swiper>
 
-      {/* Нижній слайдер з мініатюрами (прев'ю) */}
+      {}
       <Swiper
         onSwiper={setThumbsSwiper}
         loop={true}
