@@ -18,6 +18,8 @@
   gap: 4px;
   font-size: 16px;
   line-height: 1.5;
+  text-decoration: none;
+
   color: var(--main, #101828);
 }
 .locationWrapper:hover {
@@ -28,7 +30,7 @@
 }
 
 .starIcon {
-  fill: #ffc531; /* Жовтий колір зірочки */
+  fill: #ffc531;
 }
 
 .locationIcon {
@@ -44,14 +46,6 @@
   margin-bottom: 24px;
 }
 
-.description {
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--text, #475467);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 .mainCard {
   width: 650px;
   height: 304px;

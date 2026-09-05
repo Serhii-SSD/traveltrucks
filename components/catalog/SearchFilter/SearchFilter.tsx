@@ -57,7 +57,7 @@ export default function SearchFilter({
           <label className={css.labelLocation}>
             <span>Location</span>
             <div className={`${css.containerInput} ${location ? css.filled : ''}`}>
-              <svg className={css.mapIcon}>
+              <svg className={css.mapIcon}  aria-hidden="true">
                 <use href="/IconsSprite.svg#Map" />
               </svg>
               <input
@@ -152,7 +152,7 @@ export default function SearchFilter({
           </button>
           <button type="button" className={css.clearBtn} onClick={handleClear}>
             <svg className={css.vectorIcon}>
-              <use href="/logo-sprite.svg#Vector" />
+              <use href="/logo-sprite.svg#Vector"  aria-hidden="true"/>
             </svg>
             Clear filters
           </button>

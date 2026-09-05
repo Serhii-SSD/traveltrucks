@@ -43,7 +43,7 @@ export default function EmptyState({ onClearFilters }: EmptyStateProps) {
           className={css.btnClear}
           onClick={onClearFilters}
         >
-          <svg className={css.vectorIcon} width="16" height="16">
+          <svg className={css.vectorIcon} width="16" height="16" aria-hidden="true">
             <use href="/logo-sprite.svg#Vector" />
           </svg>
           <span>Clear filters</span>

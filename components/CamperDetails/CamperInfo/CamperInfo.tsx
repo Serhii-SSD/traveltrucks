@@ -35,7 +35,7 @@ export default function CamperDetails({ camper, reviewsCount = 0 }: CamperDetail
 
        <div className={css.metaRow}>
   <div className={css.ratingWrapper}>
-    <svg className={css.starIcon} width="16" height="16">
+    <svg className={css.starIcon} width="16" height="16" aria-hidden="true">
       <use href="/logo-sprite.svg#Rating" />
     </svg>
    <span className={css.ratingText}>
@@ -49,7 +49,7 @@ export default function CamperDetails({ camper, reviewsCount = 0 }: CamperDetail
             rel="noopener noreferrer"
             className={css.locationWrapper}
           >
-    <svg className={css.locationIcon} width="16" height="16">
+    <svg className={css.locationIcon} width="16" height="16" aria-hidden="true">
       <use href="/iconsSprite.svg#Map" />
     </svg>
     <span className={css.locationText}>

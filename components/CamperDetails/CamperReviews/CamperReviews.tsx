@@ -17,25 +17,29 @@ export default function CamperReviews({ reviews }: CamperReviewsProps) {
           ? review.reviewer_name.charAt(0).toUpperCase()
           : 'U';
 
-        return (
+ return (
           <div key={index} className={css.reviewCard}>
             <div className={css.reviewerHeader}>
               <div className={css.avatar}>{initial}</div>
               <div className={css.reviewerInfo}>
                 <p className={css.reviewerName}>{review.reviewer_name}</p>
                 <div className={css.starsRow}>
-                  {Array.from({ length: 5 }, (_, i) => (
-                    <span
-                      key={i}
-                      className={
-                        i < review.reviewer_rating
-                          ? css.starFilled
-                          : css.starEmpty
-                      }
-                    >
-                      ★
-                    </span>
-                  ))}
+                  {Array.from({ length: 5 }, (_, i) => {
+                    const isFilled = i < review.reviewer_rating;
+                    const iconId = isFilled ? '#gold-rating' : '#empry-rating';
+
+                    return (
+                      <svg
+                        key={i}
+                        width="16"
+                        height="16"
+                        className={isFilled ? css.starFilled : css.starEmpty}
+                        aria-hidden="true"
+                      >
+                        <use href={`/IconsSprite.svg${iconId}`} />
+                      </svg>
+                    );
+                  })}
                 </div>
               </div>
             </div>
