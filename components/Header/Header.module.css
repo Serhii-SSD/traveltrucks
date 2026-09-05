@@ -1,37 +1,36 @@
 .header {
-  background-color: #f7f7f7;
-  border-bottom: 1px solid #e4e7ec;
-  padding: 24px 0;
   width: 100%;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .container {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 64px;
+  height: 72px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  position: relative;
 }
 
 .logo {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #101828;
 }
 
 .logoIcon {
-  width: 136px;
-  height: 16px;
   display: block;
-  color: #101828;
 }
 
 .nav {
   display: flex;
   align-items: center;
   gap: 32px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .navLink {
@@ -42,6 +41,7 @@
   transition: color 0.2s ease;
 }
 
-.navLink:hover {
-  color: #e44848;
+.activeLink {
+  color: #829b91;
+  font-weight: 600;
 }
