@@ -1,12 +1,57 @@
-/* Зовнішній контейнер правої колонки */
 .infoColumn {
   width: 650px;
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Відстань між двома блоками */
+  gap: 16px;
+}
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
-/* 1. Верхня картка (Основна інформація) */
+.ratingWrapper,
+.locationWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--main, #101828);
+}
+.locationWrapper:hover {
+  opacity: 0.75;
+}
+.ratingText {
+  text-decoration: none;
+}
+
+.starIcon {
+  fill: #ffc531; /* Жовтий колір зірочки */
+}
+
+.locationIcon {
+  fill: none;
+  stroke: currentColor;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  color: var(--main, #101828);
+  margin-bottom: 24px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text, #475467);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .mainCard {
   width: 650px;
   height: 304px;
@@ -18,7 +63,6 @@
   flex-direction: column;
 }
 
-/* 2. Нижня картка (Vehicle details) */
 .detailsCard {
   width: 650px;
   min-height: 360px;
@@ -30,7 +74,6 @@
   flex-direction: column;
 }
 
-/* --- Внутрішні стилі --- */
 .title {
   font-size: 24px;
   font-weight: 600;

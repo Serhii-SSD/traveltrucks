@@ -5,6 +5,11 @@ interface CamperDetailsProps {
   camper: CamperID;
   reviewsCount?: number;
 }
+const formatLocation = (loc: string) => {
+  if (!loc) return '';
+  const parts = loc.split(',').map(item => item.trim());
+  return parts.length === 2 ? `${parts[1]}, ${parts[0]}` : loc;
+};
 
 const formatFeatureName = (str: string): string => {
   if (!str) return '';
@@ -14,6 +19,8 @@ const formatFeatureName = (str: string): string => {
 };
 
 export default function CamperDetails({ camper, reviewsCount = 0 }: CamperDetailsProps) {
+  const formattedLocation = formatLocation(camper.location);
+  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(formattedLocation)}`;
   const badges: string[] = [
     camper.transmission,
     camper.engine,
@@ -22,21 +29,41 @@ export default function CamperDetails({ camper, reviewsCount = 0 }: CamperDetail
 
   return (
     <div className={css.infoColumn}>
-      {/* 1. Верхня картка: Основна інформація */}
+      {}
       <div className={css.mainCard}>
         <h1 className={css.title}>{camper.name}</h1>
 
-        <div className={css.metaRow}>
-          <span className={css.rating}>★ {camper.rating} ({reviewsCount} Reviews)</span>
-          <span className={css.location}>📍 {camper.location}</span>
-        </div>
+       <div className={css.metaRow}>
+  <div className={css.ratingWrapper}>
+    <svg className={css.starIcon} width="16" height="16">
+      <use href="/logo-sprite.svg#Rating" />
+    </svg>
+   <span className={css.ratingText}>
+      {camper.rating} ({reviewsCount} Reviews)
+    </span>
+  </div>
 
-        <p className={css.price}>€{camper.price.toFixed(2)}</p>
+  <a
+            href={mapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={css.locationWrapper}
+          >
+    <svg className={css.locationIcon} width="16" height="16">
+      <use href="/iconsSprite.svg#Map" />
+    </svg>
+    <span className={css.locationText}>
+      {formatLocation(camper.location)}
+    </span>
+  </a>
+</div>
 
-        <p className={css.description}>{camper.description}</p>
+<p className={css.price}>€{Math.round(camper.price)}</p>
+
+<p className={css.description}>{camper.description}</p>
       </div>
 
-      {/* 2. Нижня картка: Vehicle Details */}
+      {}
       <div className={css.detailsCard}>
         <h3 className={css.sectionTitle}>Vehicle details</h3>
 
