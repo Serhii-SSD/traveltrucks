@@ -22,6 +22,8 @@ export default function CatalogPage() {
   const [totalPages, setTotalPages] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [activeFilters, setActiveFilters] = useState<FormDataValue>(INITIAL_FILTERS);
+  
+  const [filterKey, setFilterKey] = useState<number>(0);
 
   const fetchCampers = useCallback(
     async (
@@ -57,13 +59,12 @@ export default function CatalogPage() {
     []
   );
 
-  // Первинний фетч при завантаженні сторінки
   useEffect(() => {
     let ignore = false;
 
     const loadInitialData = async () => {
       if (!ignore) {
-        await fetchCampers(1, activeFilters, true);
+        await fetchCampers(1, INITIAL_FILTERS, true);
       }
     };
 
@@ -74,14 +75,19 @@ export default function CatalogPage() {
     };
   }, [fetchCampers]);
 
-  // Обробка відправки чи очищення фільтрів
   const handleSearch = (newFilters: FormDataValue) => {
     setActiveFilters(newFilters);
     setPage(1);
     fetchCampers(1, newFilters, true);
   };
 
-  // Обробка кнопки Load More
+  const handleResetFilters = () => {
+    setActiveFilters(INITIAL_FILTERS);
+    setPage(1);
+    setFilterKey(prev => prev + 1); 
+    fetchCampers(1, INITIAL_FILTERS, true);
+  };
+
   const handleLoadMore = () => {
     const nextPage = page + 1;
     setPage(nextPage);
@@ -93,7 +99,8 @@ export default function CatalogPage() {
   return (
     <main className={css.catalogContainer}>
       <aside className={css.sidebar}>
-        <SearchFilter onSearch={handleSearch} />
+        {}
+        <SearchFilter key={filterKey} onSearch={handleSearch} />
       </aside>
 
       <section className={css.content}>
@@ -102,6 +109,7 @@ export default function CatalogPage() {
           hasMore={hasMore}
           onLoadMore={handleLoadMore}
           isLoading={isLoading}
+          onClearFilters={handleResetFilters}
         />
       </section>
     </main>

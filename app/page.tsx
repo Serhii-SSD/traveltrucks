@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import Header from "@/components/Header/Header";
 import styles from "./page.module.css"
 
 export default function HomePage() {
@@ -13,7 +12,6 @@ export default function HomePage() {
   };
   return (
     <>
-      <Header />
       <main className={styles.main}>
         <section className={styles.hero}>
           { }
