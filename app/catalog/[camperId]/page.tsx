@@ -46,7 +46,7 @@ export default function CamperDetailsPage() {
   return (
     <main className={css.detailsPage}>
       <div className={css.mainContainer}>
-        {/* Верхній блок */}
+        {}
         <section className={css.topSection}>
           <div className={css.galleryColumn}>
             <CamperGallery gallery={camper.gallery} />
@@ -56,7 +56,7 @@ export default function CamperDetailsPage() {
           </div>
         </section>
 
-        {/* Нижній блок з об'єднаним заголовком */}
+        {}
         <section className={css.bottomSectionWrapper}>
           <h2 className={css.sectionTitle}>Reviews</h2>
           <div className={css.bottomSectionContent}>

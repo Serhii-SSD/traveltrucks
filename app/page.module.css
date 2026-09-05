@@ -5,7 +5,6 @@
 .hero {
   position: relative;
   width: 100%;
-  /* Робимо висоту секції на весь екран мінус висота хедера (72px) */
   height: calc(100vh - 72px);
   min-height: 600px;
   display: flex;
@@ -22,7 +21,6 @@
   z-index: 1;
 }
 
-/* Оверлей rgba(0, 0, 0, 0.2) з Figma поверх картинки */
 .imageWrapper::after {
   content: "";
   position: absolute;
