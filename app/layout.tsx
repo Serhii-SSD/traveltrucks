@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Toaster } from 'react-hot-toast';
 import Header from '@/components/Header/Header';
 import './globals.css';
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         <QueryClientProvider client={queryClient}>
           <Header />
           {children}
+          <Toaster position="top-right" reverseOrder={false} />
         </QueryClientProvider>
       </body>
     </html>
