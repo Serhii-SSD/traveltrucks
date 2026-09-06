@@ -51,7 +51,7 @@ export default function CamperGallery({ gallery }: CamperGalleryProps) {
       {}
       <Swiper
         onSwiper={setThumbsSwiper}
-        loop={true}
+        loop={gallery.length > 3}
         spaceBetween={31}
         slidesPerView={4}
         freeMode={true}
