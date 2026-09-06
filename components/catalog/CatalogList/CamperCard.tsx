@@ -3,10 +3,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import css from './CamperCard.module.css';
-import { Campers } from '@/types/camper';
+import { CamperID } from '@/types/camper';
 
 interface CamperCardProps {
-  camper: Campers;
+  camper: CamperID;
 }
 
 export default function CamperCard({ camper }: CamperCardProps) {
