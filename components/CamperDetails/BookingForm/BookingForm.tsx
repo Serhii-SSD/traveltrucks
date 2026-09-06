@@ -35,7 +35,7 @@ export default function BookingForm({ camperId }: BookingFormProps) {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<FormValues>({
     resolver: yupResolver(schema),
     mode: 'onTouched',
@@ -43,13 +43,18 @@ export default function BookingForm({ camperId }: BookingFormProps) {
 
   const onSubmit = async (data: FormValues) => {
     try {
-      await postBook({ dataID: camperId, bookData: data as BookData });
-      toast.success('Booking request sent successfully!');
+      const response = await postBook({ dataID: camperId, bookData: data as BookData });
+      toast.success(response.message || 'Booking request sent successfully!');
       reset();
-    } catch (error) {
-      console.error('Booking error:', error);
-      toast.error('Failed to send booking request. Please try again.');
-    }
+  } catch (error: unknown) {
+  console.error('Booking error:', error);
+  
+  const err = error as { response?: { data?: { message?: string } } };
+  const errorMsg =
+    err.response?.data?.message || 'Failed to send booking request. Please try again.';
+    
+  toast.error(errorMsg);
+}
   };
 
   return (
@@ -62,34 +67,56 @@ export default function BookingForm({ camperId }: BookingFormProps) {
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className={css.form} noValidate>
-        {/* Name */}
+        {}
         <div className={css.fieldGroup}>
-          <input
-            type="text"
-            placeholder="Name*"
-            {...register('name')}
-            className={`${css.input} ${errors.name ? css.inputError : ''}`}
-          />
+          <div className={`${css.inputContainer} ${errors.name ? css.hasError : ''}`}>
+            <input
+              type="text"
+              id="name"
+              placeholder=" "
+              {...register('name')}
+              className={css.input}
+            />
+            <label htmlFor="name" className={css.label}>
+              Name*
+            </label>
+            {errors.name && (
+              <span className={css.errorIcon} aria-hidden="true">
+                !
+              </span>
+            )}
+          </div>
           {errors.name && (
             <p className={css.errorMessage}>{errors.name.message}</p>
           )}
         </div>
 
-        {/* Email */}
+        {}
         <div className={css.fieldGroup}>
-          <input
-            type="email"
-            placeholder="Email*"
-            {...register('email')}
-            className={`${css.input} ${errors.email ? css.inputError : ''}`}
-          />
+          <div className={`${css.inputContainer} ${errors.email ? css.hasError : ''}`}>
+            <input
+              type="email"
+              id="email"
+              placeholder=" "
+              {...register('email')}
+              className={css.input}
+            />
+            <label htmlFor="email" className={css.label}>
+              Email*
+            </label>
+            {errors.email && (
+              <span className={css.errorIcon} aria-hidden="true">
+                !
+              </span>
+            )}
+          </div>
           {errors.email && (
             <p className={css.errorMessage}>{errors.email.message}</p>
           )}
         </div>
 
-        <button type="submit" className={css.sendBtn}>
-          Send
+        <button type="submit" disabled={isSubmitting} className={css.sendBtn}>
+          {isSubmitting ? 'Sending...' : 'Send'}
         </button>
       </form>
     </div>

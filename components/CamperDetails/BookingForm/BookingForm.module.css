@@ -51,11 +51,22 @@
   align-items: flex-start;
   gap: 4px;
 }
+.inputContainer {
+  position: relative;
+  border: 1px solid #f7f7f7;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  transition: all 0.2s ease;
+}
 
+.inputContainer.hasError {
+  background-color: #ffe6e6;
+  border-color: #e44848;
+}
 .input {
   width: 527px;
   height: 60px;
-  background-color: var(--inputs, #f7f7f7);
+  background: transparent;
   border: none;
   border-radius: 12px;
   padding: 18px;
@@ -66,22 +77,44 @@
   outline: none;
 }
 
-.input::placeholder {
-  color: var(--gray, #475467);
+.label {
+  position: absolute;
+  left: 14px;
+  top: -10px;
+  background-color: #ffffff;
+  padding: 0 4px;
+  font-size: 12px;
+  color: #475467;
+  pointer-events: none;
 }
 
-.inputError {
-  border: 1px solid #e44848;
+.inputContainer.hasError .label {
+  color: #e44848;
+  background-color: #ffe6e6;
+}
+
+.errorIcon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid #e44848;
+  color: #e44848;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .errorMessage {
   font-size: 12px;
   color: #e44848;
-  margin: 0;
-  padding-left: 4px;
+  margin-left: 4px;
 }
-
-/* Спрощена кнопка */
 .sendBtn {
   width: 527px;
   height: 56px;
