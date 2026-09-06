@@ -74,30 +74,25 @@ yarn dev
 or
 pnpm dev
 
-4. \*_Open in Browser:_
+4. **Open in Browser:**
    Navigate to http://localhost:3000 to view the application.
 
 ## 📁 Project Structure
 
-|── app/
-│ │ ├── page.tsx # Home / Hero page
-│ │ ├── catalog/
-│ │ │ ├── page.tsx # Catalog page with filters & pagination
-│ │ │ └── [camperId]/
-│ │ │ └── page.tsx # Camper details page
-│ │ ├── layout.tsx # Root layout & providers
-│ │ └── favicon.ico
-│ ├── components/ # Reusable UI components (Filters, CamperCard, BookingForm, Gallery, etc.)
-│ ├── services/ # API services & Axios instances
-│ └── types/ # TypeScript interfaces / types
-│
-├── public/ # Static assets (images, icons)
-├── README.md
-└── package.json
+**page.tsx** # Home / Hero page
+**catalog/page.tsx** # Catalog page with filters & pagination
+**[camperId]/page.tsx** # Camper details page
+**layout.tsx** # Root layout & providers
+**favicon.ico**
+**components/** # Reusable UI components (Filters, CamperCard, BookingForm, Gallery, etc.)
+**services/** # API services & Axios instances
+**types/** # TypeScript interfaces / types
+**public/** # Static assets (images, icons)
+**README.md**
 
 ## 👤 Author
 
-Developed by Serhii Demydenko
+**Developed by Serhii Demydenko**
 
     GitHub: @Serhii-SSD
 
