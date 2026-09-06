@@ -59,50 +59,43 @@ Make sure you have **Node.js** (v18.x or higher) and **npm** / **yarn** / **pnpm
    ```
 2. **Install dependencies:**
    Bash
-
-npm install
-
-# or
-
-yarn install
-
-# or
-
-pnpm install
+   npm install
+   or
+   yarn install
+   or
+   pnpm install
 
 3. **Run the development server:**
    Bash
 
 npm run dev
-
-# or
-
+or
 yarn dev
-
-# or
-
+or
 pnpm dev
 
 4. \*_Open in Browser:_
    Navigate to http://localhost:3000 to view the application.
-   📁 Project Structure
-   |── app/
-   │ │ ├── page.tsx # Home / Hero page
-   │ │ ├── catalog/
-   │ │ │ ├── page.tsx # Catalog page with filters & pagination
-   │ │ │ └── [camperId]/
-   │ │ │ └── page.tsx # Camper details page
-   │ │ ├── layout.tsx # Root layout & providers
-   │ │ └── favicon.ico
-   │ ├── components/ # Reusable UI components (Filters, CamperCard, BookingForm, Gallery, etc.)
-   │ ├── services/ # API services & Axios instances
-   │ └── types/ # TypeScript interfaces / types
-   │
-   ├── public/ # Static assets (images, icons)
-   ├── README.md
-   └── package.json
 
-   👤 Author
+## 📁 Project Structure
+
+|── app/
+│ │ ├── page.tsx # Home / Hero page
+│ │ ├── catalog/
+│ │ │ ├── page.tsx # Catalog page with filters & pagination
+│ │ │ └── [camperId]/
+│ │ │ └── page.tsx # Camper details page
+│ │ ├── layout.tsx # Root layout & providers
+│ │ └── favicon.ico
+│ ├── components/ # Reusable UI components (Filters, CamperCard, BookingForm, Gallery, etc.)
+│ ├── services/ # API services & Axios instances
+│ └── types/ # TypeScript interfaces / types
+│
+├── public/ # Static assets (images, icons)
+├── README.md
+└── package.json
+
+## 👤 Author
 
 Developed by Serhii Demydenko
 
