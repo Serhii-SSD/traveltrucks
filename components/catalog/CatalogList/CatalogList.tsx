@@ -2,12 +2,12 @@
 
 import CamperCard from './CamperCard';
 import css from './CatalogList.module.css';
-import { Campers } from '@/types/camper';
+import { CamperID } from '@/types/camper';
 import LoaderModal from '@/components/catalog/LoaderModal/LoaderModal';
 import EmptyState from '@/components/catalog/CatalogList/EmptyState';
 
 interface CatalogListProps {
-  campers: Campers[];
+  campers: CamperID[];
   hasMore: boolean;
   onLoadMore: () => void;
   isLoading: boolean;
