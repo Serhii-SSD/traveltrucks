@@ -50,7 +50,7 @@ export default function CamperDetails({ camper, reviewsCount = 0 }: CamperDetail
             className={css.locationWrapper}
           >
     <svg className={css.locationIcon} width="16" height="16" aria-hidden="true">
-      <use href="/iconsSprite.svg#Map" />
+      <use href="/IconsSprite.svg#Map"/>
     </svg>
     <span className={css.locationText}>
       {formatLocation(camper.location)}
