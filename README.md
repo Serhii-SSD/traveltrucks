@@ -6,7 +6,7 @@ A modern web application built with **Next.js (App Router)** for discovering and
 
 ## 🚀 Live Demo
 
-- **Live Application:** [сайт]
+- **Live Application:** [https://traveltrucks-tan.vercel.app/](https://traveltrucks-tan.vercel.app/)
 
 ---
 
