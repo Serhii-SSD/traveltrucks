@@ -79,16 +79,16 @@ pnpm dev
 
 ## 📁 Project Structure
 
-**page.tsx** # Home / Hero page
-**catalog/page.tsx** # Catalog page with filters & pagination
-**[camperId]/page.tsx** # Camper details page
-**layout.tsx** # Root layout & providers
-**favicon.ico**
-**components/** # Reusable UI components (Filters, CamperCard, BookingForm, Gallery, etc.)
-**services/** # API services & Axios instances
-**types/** # TypeScript interfaces / types
-**public/** # Static assets (images, icons)
-**README.md**
+- **page.tsx** # Home / Hero page.
+- **catalog/page.tsx** # Catalog page with filters & pagination
+- **[camperId]/page.tsx** # Camper details page.
+- **layout.tsx** # Root layout & providers.
+- **favicon.ico**.
+- **components/** # Reusable UI components (Filters, CamperCard, BookingForm, Gallery, etc.)
+- **services/** # API services & Axios instances.
+- **types/** # TypeScript interfaces / types.
+- **public/** # Static assets (images, icons).
+- **README.md**
 
 ## 👤 Author
 
